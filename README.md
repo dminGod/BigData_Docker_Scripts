@@ -1,2 +1,3 @@
-# BigData_Docker_Scripts
-This has docker scripts to setup big data projects
+# BigData Docker Scripts
+This repo has common scripts for setting up and installing docker containers for different types of apps.
+
