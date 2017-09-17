@@ -7,10 +7,10 @@ yum groupinstall -y "Development tools"
 # Install Java, epel repo and ansible
 cd /opt
 
-wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
 wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz
 
-rpm -ivh epel-release-6-8.noarch.rpm
+rpm -ivh epel-release-7-10.noarch.rpm
 
 # Install Ansible
 yum install ansible
