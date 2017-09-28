@@ -77,3 +77,5 @@ cd postgres-xl-9.5r1.4/
 # Run as Root : make install;
 
 # echo 'PATH=$PATH:/usr/local/pgsql/bin' >> ~/.bashrc; source ~/.bashrc;
+
+# Make the IP address of this server hard-coded if you are using docker, because once you do restarts and the IP changes, it will not work.
