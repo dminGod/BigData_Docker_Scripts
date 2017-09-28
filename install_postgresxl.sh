@@ -64,7 +64,12 @@ tar -zxvf postgres-xl-9.5r1.4.tar.gz;
 
 cd postgres-xl-9.5r1.4/
 
-cd /opt/postgres-xl-9.5r1.4/;./configure; make; make install;
-cd /opt/postgres-xl-9.5r1.4/contrib/pgxc_ctl; make; make install;
+# Run as Postgres user : cd /opt/postgres-xl-9.5r1.4/;sudo ./configure; sudo make; 
 
-echo 'PATH=$PATH:/usr/local/pgsql/bin' >> ~/.bashrc; source ~/.bashrc;
+# Run as Root : make install;
+
+# Run as Postgres user : cd /opt/postgres-xl-9.5r1.4/contrib/pgxc_ctl; sudo make; 
+
+# Run as Root : make install;
+
+# echo 'PATH=$PATH:/usr/local/pgsql/bin' >> ~/.bashrc; source ~/.bashrc;
