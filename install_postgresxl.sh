@@ -56,7 +56,7 @@ cp /root/.ssh/authorized_keys /home/postgres/.ssh/authorized_keys
 
 chown -R postgres:postgres /home/bd/.ssh
 
-
+# INSTALL OF PGXL -- STARTS FROM HERE
 mkdir /opt;
 cd /opt;
 wget https://nchc.dl.sourceforge.net/project/postgres-xl/Releases/Version_9.5r1/postgres-xl-9.5r1.4.tar.gz;
