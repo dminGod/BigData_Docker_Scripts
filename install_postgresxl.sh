@@ -12,10 +12,10 @@ wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download
 
 rpm -ivh epel-release-6-8.noarch.rpm
 
-# Install Ansible
+# Install Ansible, we will use this later for controlling the machiens from a single place..
 yum install ansible
 
-# Install Java
+# Install Java, just in case we need it... don't need it really....
 tar -zxvf jdk-8u144-linux-x64.tar.gz
 
 cd jdk1.8.0_144
@@ -28,10 +28,14 @@ alternatives --set javac /usr/bin/javac;
 
 java -version
 
-# Set password for root
+# Set password for root so we can ssh from one machine to other if we want
 echo "password" | passwd root --stdin
 ssh-keygen -t rsa
 
+# Now we will do passwordless ssh for root and postgres user. We are going to do the passwordless ssh to the node itself.
+# This means that when new nodes are created in this same way a copy of this server they all will be able to SSH into each other.
+# DO NOT run the keygen steps on all the machines, generate the identity file for one machine and use the same file for all the other machines.
+# (This is for making life easy -- you are not supposed to do this in production!)
 # Create a id file for the root user. We will use the same one for the other use also
 ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -N ''
 chkconfig sshd on
