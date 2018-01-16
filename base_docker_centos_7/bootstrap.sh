@@ -1,30 +1,30 @@
 #!/bin/sh
 # Update and install the common stuff..
 yum -y update
-yum install -y tar openssh-server openssh-clients openssh wget vim sudo readline-devel iproute openssh-* initscripts vim wget curl lynx telnet nc nmap less man zlib-devel flex bison lsof gcc tcl make git
+yum install -y tar openssh-server openssh-clients openssh wget vim sudo readline-devel iproute openssh-* initscripts vim wget curl lynx telnet nc nmap less man zlib-devel flex bison lsof gcc tcl make git yum install java-1.8.0-openjdk epel-release
 yum groupinstall -y "Development tools"
 
 # Install Java, epel repo and ansible
 cd /opt
 
-wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
-wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz
+#wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
+#wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz
 
-rpm -ivh epel-release-7-10.noarch.rpm
+#rpm -ivh epel-release-7-10.noarch.rpm
 
 # Install Ansible
 yum install ansible
 
 # Install Java
-tar -zxvf jdk-8u144-linux-x64.tar.gz
+#tar -zxvf jdk-8u144-linux-x64.tar.gz
 
-cd jdk1.8.0_144
+#cd jdk1.8.0_144
 
-alternatives --install /usr/bin/java java /opt/jdk1.8.0_144/bin/java 1;
-alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_144/bin/jar 1;
-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_144/bin/javac 1;
-alternatives --set jar /usr/bin/jar;
-alternatives --set javac /usr/bin/javac;
+#alternatives --install /usr/bin/java java /opt/jdk1.8.0_144/bin/java 1;
+#alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_144/bin/jar 1;
+#alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_144/bin/javac 1;
+#alternatives --set jar /usr/bin/jar;
+#alternatives --set javac /usr/bin/javac;
 
 java -version
 
